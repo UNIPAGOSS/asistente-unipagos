@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Asistente UNIPAGOS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; background: #f3f4f6; margin: 0; padding: 20px; }
+        .chat-box { max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .message { margin-bottom: 10px; }
+        .user { text-align: right; }
+        .assistant { text-align: left; color: #333; }
+        .input-box { display: flex; margin-top: 20px; }
+        .input-box input { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        .input-box button { padding: 10px 15px; border: none; background: #2563eb; color: #fff; border-radius: 5px; margin-left: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="chat-box">
+        <div id="chat">
+            <div class="message assistant">Hola 👋 Soy el Asistente UNIPAGOS. ¿En qué puedo ayudarte hoy?</div>
+        </div>
+        <div class="input-box">
+            <input type="text" id="userInput" placeholder="Escribí tu mensaje...">
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+    </div>
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const chat = document.getElementById('chat');
+            if (input.value.trim() === '') return;
+            const userMessage = document.createElement('div');
+            userMessage.className = 'message user';
+            userMessage.innerText = input.value;
+            chat.appendChild(userMessage);
+            const response = document.createElement('div');
+            response.className = 'message assistant';
+            response.innerText = 'Gracias por tu mensaje. En breve un asesor te responderá.';
+            chat.appendChild(response);
+            input.value = '';
+            chat.scrollTop = chat.scrollHeight;
+        }
+    </script>
+</body>
+</html>
