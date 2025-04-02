@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Asistente UNIPAGOS</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 20px; }
+        #chat-box { background: #fff; padding: 10px; border-radius: 8px; max-width: 600px; margin: auto; height: 400px; overflow-y: scroll; }
+        .message { margin: 10px 0; }
+        .user { font-weight: bold; color: #0a0; }
+        .assistant { font-weight: bold; color: #00f; }
+    </style>
+</head>
+<body>
+    <h2>Asistente UNIPAGOS</h2>
+    <div id="chat-box"></div>
+    <input type="text" id="user-input" placeholder="Escribí tu mensaje..." style="width: 70%;">
+    <button onclick="sendMessage()">Enviar</button>
+    <script src="script.js"></script>
+</body>
+</html>
